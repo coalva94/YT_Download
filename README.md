@@ -65,7 +65,9 @@ pyinstaller main.py --name YT_Download --noconfirm --windowed --icon=images/icon
 pyinstaller main.py --name YT_Download --noconfirm --windowed --icon=images/icon.icns --add-data "images:images"
 ```
 3. Este comando generará el archivo YT_Download.app dentro de la carpeta dist en macOS.
-Nota: En macOS, es posible que al abrir el ejecutable por primera vez aparezca una advertencia de seguridad debido a que no es un software firmado. Para abrirlo, haz clic derecho sobre el archivo .app y selecciona "Abrir".
+<div style="background-color: #f0f0f0; padding: 10px; border-radius: 5px;">
+  <strong>Nota:</strong> En macOS, es posible que al abrir el ejecutable por primera vez aparezca una advertencia de seguridad debido a que no es un software firmado. Para abrirlo, haz clic derecho sobre el archivo .app y selecciona "Abrir".
+</div>
 
 ## 📥 Descargas
 
@@ -73,13 +75,13 @@ Nota: En macOS, es posible que al abrir el ejecutable por primera vez aparezca u
 
 Puedes descargar la versión para **Windows** desde el siguiente enlace:
 
-- [Descargar para Windows]((https://github.com/coalva94/YT_Download/actions/runs/14545574599/artifacts/2972788710))
+- [Descargar para Windows](https://github.com/coalva94/YT_Download/actions/runs/14545574599/artifacts/2972788710)
 
 ### Descargar la versión para macOS
 
 Puedes descargar la versión para **macOS** desde el siguiente enlace:
 
-- [Descargar para macOS](https://github.com/coalva94/YT_Download/releases/download/v1.0.0/YT_Download.app.zip))
+- [Descargar para macOS](https://github.com/coalva94/YT_Download/releases/download/v1.0.0/YT_Download.app.zip)
 
 ---
 
