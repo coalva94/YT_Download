@@ -59,4 +59,7 @@ pyinstaller main.py --name YT_Download --noconfirm --windowed --icon=images/icon
 
 ### Descargar la versión para Windows
 
-- [Descargar para Windows](https://github.com/coalva94/YT_Download/actions/runs/14544988995/artifacts/2972637228)
+- [Descargar para Windows](https://github.com/coalva94/YT_Download/actions/runs/14545211550/artifacts/2972700000)
+
+
+
