@@ -1,34 +1,72 @@
-name: Build Windows EXE
+name: Build YouTube Download App
 
 on:
   push:
     branches: [ main ]
-  workflow_dispatch:  # para lanzarlo manualmente también
 
 jobs:
+  build-mac:
+    name: Build on macOS
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Build app with PyInstaller (macOS)
+        run: |
+          pyinstaller main.py \
+            --name YT_Download \
+            --noconfirm \
+            --windowed \
+            --icon=images/icon.icns \
+            --add-data "images:images"
+
+      - name: Upload artifact (macOS)
+        uses: actions/upload-artifact@v4
+        with:
+          name: YT_Download-macOS
+          path: dist/YT_Download.app
+
   build-windows:
+    name: Build on Windows
     runs-on: windows-latest
 
     steps:
-    - name: Checkout repo
-      uses: actions/checkout@v3
+      - name: Checkout repo
+        uses: actions/checkout@v4
 
-    - name: Set up Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.13'
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
 
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install pyinstaller
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
 
-    - name: Build EXE with PyInstaller
-      run: |
-        pyinstaller --onefile --windowed --icon=images/icono.ico main.py
+      - name: Build app with PyInstaller (Windows)
+        run: |
+          pyinstaller main.py \
+            --name YT_Download \
+            --noconfirm \
+            --windowed \
+            --icon=images/icono.ico \
+            --add-data "images;images"
 
-    - name: Upload EXE as artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: app-windows
-        path: dist/main.exe
+      - name: Upload artifact (Windows)
+        uses: actions/upload-artifact@v4
+        with:
+          name: YT_Download-Windows
+          path: dist/YT_Download

@@ -3,6 +3,7 @@ import tkinter as tk
 from tkinter import ttk
 from tkinter import filedialog
 from PIL import Image, ImageTk
+import sys
 import os
 
 
@@ -13,14 +14,23 @@ root.geometry("410x410")
 root.resizable(False, False)
 
 
+
+def ruta_recurso(rel_path):
+    try:
+        base_path = sys._MEIPASS  # Cuando se ejecuta como binario
+    except AttributeError:
+        base_path = os.path.abspath(".")  # Cuando se ejecuta como script
+
+    return os.path.join(base_path, rel_path)
+
 # Cargar la imagen PNG
-image_path = 'images/banner.png'  # Reemplázalo con la ruta de tu imagen
+image_path = ruta_recurso('images/banner.png')
 image = Image.open(image_path)
 image = ImageTk.PhotoImage(image)
 
 
 #Logo
-path = 'images/alvabits.png'  # Reemplázalo con la ruta de tu imagen
+path = ruta_recurso('images/alvabits.png')  # Reemplázalo con la ruta de tu imagen
 logo = Image.open(path)
 logo = ImageTk.PhotoImage(logo)
 
@@ -194,5 +204,6 @@ ttk.Progressbar(bar, length=390, variable=progress_var, maximum=100).pack(pady=5
 
 '''
 
-root.mainloop()
+if __name__ == "__main__":
+    root.mainloop()
 
