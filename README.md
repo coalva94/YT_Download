@@ -79,7 +79,7 @@ Puedes descargar la versión para **Windows** desde el siguiente enlace:
 
 Puedes descargar la versión para **macOS** desde el siguiente enlace:
 
-- [Descargar para macOS](https://github.com/tu_usuario/YT_Download/releases/download/v1.0/YT_Download.app)
+- [Descargar para macOS](https://github.com/coalva94/YT_Download/releases/download/v1.0.0/YT_Download.app.zip))
 
 ---
 
