@@ -49,7 +49,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: '3.13'
 
       - name: Install dependencies
         run: |
@@ -58,11 +58,11 @@ jobs:
 
       - name: Build app with PyInstaller (Windows)
         run: |
-          pyinstaller main.py \
-            --name YT_Download \
-            --noconfirm \
-            --windowed \
-            --icon=images/icono.ico \
+          pyinstaller main.py `
+            --name YT_Download `
+            --noconfirm `
+            --windowed `
+            --icon=images/icono.ico `
             --add-data "images;images"
 
       - name: Upload artifact (Windows)

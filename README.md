@@ -44,3 +44,15 @@ Aplicación de escritorio hecha con **Python** y **Tkinter**, con compatibilidad
 ```bash
 git clone https://github.com/tu_usuario/YT_Download.git
 cd YT_Download
+```
+
+### 2. Para generar el ejecutable en windows
+```bash
+pyinstaller main.py --name YT_Download --noconfirm --windowed --icon=images/icono.ico --add-data "images;images"
+```
+
+### 3. Para generar el ejecutable en MacOs
+```bash
+pyinstaller main.py --name YT_Download --noconfirm --windowed --icon=images/icon.icns --add-data "images:images"
+
+```
