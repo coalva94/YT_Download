@@ -25,7 +25,22 @@ jobs:
 
       - name: Build app with PyInstaller (macOS)
         run: |
-          pyinstaller main.py --name YT_Download --noconfirm --windowed --icon=images/icon.icns --add-data "images:images"     
+          pyinstaller main.py --name YT_Download --noconfirm --windowed --icon=images/icon.icns --add-data "images:images"
+
+      - name: Verificar contenido del bundle
+        run: ls -R dist/YT_Download.app
+
+      - name: Verificar binario
+        run: |
+          if [ -f dist/YT_Download.app/Contents/MacOS/YT_Download ]; then
+            echo "✅ Ejecutable generado correctamente"
+          else
+            echo "❌ El ejecutable no fue generado"
+            exit 1
+          fi
+
+      - name: Mostrar log de PyInstaller
+        run: cat build/YT_Download/warn-YT_Download.txt || echo "No hay warnings"
 
       - name: Give execute permissions to the app
         run: chmod +x dist/YT_Download.app/Contents/MacOS/YT_Download
