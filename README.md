@@ -71,10 +71,9 @@ Nota: En macOS, es posible que al abrir el ejecutable por primera vez aparezca u
 
 ### Descargar la versión para Windows
 
-<<<<<<< HEAD
 Puedes descargar la versión para **Windows** desde el siguiente enlace:
 
-- [Descargar para Windows](https://github.com/tu_usuario/YT_Download/releases/download/v1.0/YT_Download-Windows.exe)
+- [Descargar para Windows]((https://github.com/coalva94/YT_Download/actions/runs/14545574599/artifacts/2972788710))
 
 ### Descargar la versión para macOS
 
@@ -106,9 +105,3 @@ git push origin feature/nueva-funcionalidad
 ```bash
 Este bloque puedes agregarlo donde lo desees en tu archivo `README.md`.
 ```
-=======
-- [Descargar para Windows](https://github.com/coalva94/YT_Download/actions/runs/14545211550/artifacts/2972700000)
-
-
-
->>>>>>> a8e5a724264dfac3625c638834fe2b0da962ae0d
