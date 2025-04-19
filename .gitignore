@@ -6,3 +6,6 @@ venv/
 .venv/
 .vscode/
 .idea/
+!.github/workflows/
+!README.md
+!requirements.txt
