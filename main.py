@@ -2,14 +2,32 @@ import yt_dlp
 import tkinter as tk
 from tkinter import ttk
 from tkinter import filedialog
+from PIL import Image, ImageTk
 import os
 
 
 # Crear la ventana principal
 root = tk.Tk()
 root.title("YouTube Downloader")
-root.geometry("410x600")
+root.geometry("410x410")
 root.resizable(False, False)
+
+
+# Cargar la imagen PNG
+image_path = 'images/banner.png'  # Reemplázalo con la ruta de tu imagen
+image = Image.open(image_path)
+image = ImageTk.PhotoImage(image)
+
+
+#Logo
+path = 'images/alvabits.png'  # Reemplázalo con la ruta de tu imagen
+logo = Image.open(path)
+logo = ImageTk.PhotoImage(logo)
+
+
+# Crear un widget Label para mostrar la imagen
+image_label = tk.Label(root, image=image)
+image_label.pack()
 ttk.Label(root, text="Descarga audios o videos de Youtube:").pack()
 
 
@@ -101,9 +119,21 @@ def descargar_audio(url, folder):
     
 # Botón para iniciar la descarga (video)
 def button_download():
-    download_button = tk.Button(root, text="Descargar video", command=lambda: download_video(url_entry.get(), selected_format_id.get(), selected_folder ))
+    download_button = ttk.Button(root, text="Descargar video", command=lambda: download_video(url_entry.get(), selected_format_id.get(), selected_folder ))
     download_button.pack(pady=5)
     
+      
+# Variable para la barra de progreso
+#progress_var = IntVar()  # Variable que controlará el progreso (0-100)
+
+# Hook de progreso para actualizar la barra
+'''def progress_hook(d):
+    if d['status'] == 'downloading':
+        # Obtener el porcentaje descargado
+        percent = d.get('_percent_str', '0.0%').strip('%')
+        progress_var.set(int(float(percent)))       '''
+      
+      
       
 def download_video(url, format_id, folder):
     """Descarga el video con el formato seleccionado"""
@@ -148,7 +178,21 @@ ttk.Button(botones, text="Calidades disponibles (videos)", command=lambda:(list_
 ttk.Button(botones, text="Descargar solo audio", command=lambda:descargar_audio(url_entry.get(),selected_folder)).pack(side = 'left')
 
 
+
+#Logo
+image_logo = tk.Label(root, image=logo)
+image_logo.pack(side='bottom', padx=2, pady=5)
+
+
+'''
+#Barra de progreso
+# Barra de progreso
+bar = ttk.Frame(root)
+bar.pack(anchor="center", pady=5)
+ttk.Progressbar(bar, length=390, variable=progress_var, maximum=100).pack(pady=5)
+
+
+'''
+
 root.mainloop()
 
-
-# https://www.youtube.com/watch?v=5KTlHuNTwQA
