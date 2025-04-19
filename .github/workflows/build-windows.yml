@@ -16,7 +16,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.13.2'
+          python-version: '3.11'
 
       - name: Install dependencies
         run: |
@@ -27,7 +27,6 @@ jobs:
         run: |
           pyinstaller main.py --name YT_Download --noconfirm --windowed --icon=images/icon.icns --add-data "images:images"     
 
-
       - name: Give execute permissions to the app
         run: chmod +x dist/YT_Download.app/Contents/MacOS/YT_Download
 
@@ -36,7 +35,6 @@ jobs:
         with:
           name: YT_Download-macOS
           path: dist/YT_Download.app
-
 
   build-windows:
     name: Build on Windows
