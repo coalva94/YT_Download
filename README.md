@@ -56,3 +56,8 @@ pyinstaller main.py --name YT_Download --noconfirm --windowed --icon=images/icon
 pyinstaller main.py --name YT_Download --noconfirm --windowed --icon=images/icon.icns --add-data "images:images"
 
 ```
+
+### Descargar la versión para macOS y Windows
+
+- [Descargar para macOS](https://github.com/coalva94/YT_Download/actions/artifacts/YT_Download-macOS)
+- [Descargar para Windows](https://github.com/coalva94/YT_Download/actions/artifacts/YT_Download-Windows)
