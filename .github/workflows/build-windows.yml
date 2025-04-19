@@ -32,11 +32,20 @@ jobs:
             --icon=images/icon.icns \
             --add-data "images:images"
 
+      - name: Give execute permissions to the app
+        run: chmod +x dist/YT_Download.app/Contents/MacOS/YT_Download
+
+      - name: Verify the app works (optional)
+        run: |
+          cd dist/YT_Download.app/Contents/MacOS
+          ./YT_Download
+
       - name: Upload artifact (macOS)
         uses: actions/upload-artifact@v4
         with:
           name: YT_Download-macOS
           path: dist/YT_Download.app
+
 
   build-windows:
     name: Build on Windows
