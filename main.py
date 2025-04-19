@@ -6,12 +6,19 @@ from PIL import Image, ImageTk
 import sys
 import os
 
-
 # Crear la ventana principal
 root = tk.Tk()
 root.title("YouTube Downloader")
 root.geometry("410x410")
 root.resizable(False, False)
+
+
+
+
+if sys.platform == "win32":
+    import ctypes
+    myappid = u'com.yt_download'  # Tu identificador único
+    ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
 
 
 
