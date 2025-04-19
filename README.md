@@ -43,4 +43,4 @@ Aplicación de escritorio hecha con **Python** y **Tkinter**, con compatibilidad
 
 ```bash
 git clone https://github.com/tu_usuario/YT_Download.git
-cd Youtube-Download
+cd YT_Download
